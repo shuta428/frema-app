@@ -7,10 +7,11 @@
         .index__header__inner__main__icon
           = form_with url: "#", local: true, method: :get do |f|
             .form-group
-              = image_tag "/assets/logo.png", alt: "Rails icon", id: "pic1", class: "FURIMA-btn"
-              = f.text_field :keyword, class: 'form__sach', placeholder: 'キーワードから探す'
-              = button_tag type: 'submit', class: "follow-btn" do
-                = icon('fa', 'search')
+              =link_to "/" do
+                = image_tag "logo.png", alt: "Rails icon", id: "pic1", class: "FURIMA-btn"
+          = form_with scope: :search,  url: search_items_path, method: :get, local: true,class:"form__sach__new" do |form| 
+            = form.text_field :keyword, placeholder: "投稿を検索する", class: "form__sach" 
+            = form.submit "検索", class: "follow-btn" 
       .index__header__inner__nav
         .index__header__inner__nav__listsLeft
           = link_to "#", class: "index__header__inner__nav__listsLeft__left-btn" do
@@ -33,7 +34,7 @@
           %br
           フリマアプリです
         .index__main__visual__content__btn
-          = link_to image_tag("5a902db97f96951c82922874.png", class: "APPstore-btn", alt: "サンプル画像"), root_path
+          = link_to image_tag("Download_on_the_App_Store_Badge_US-UK_blk_092917.png", class: "APPstore-btn", alt: "サンプル画像"), root_path
           = link_to image_tag("google-play-badge.png", class: "Googleplay-btn", alt: "サンプル画像"), root_path
     .index__main__topIntroduction
       .index__main__topIntroduction__subtitle
@@ -84,7 +85,7 @@
           %br
           ほしかったあの商品に出会えるかもしれません。
         .index__main__topMiddleDl__inner__btn
-          = link_to image_tag("5a902db97f96951c82922874.png", class: "APPstore-btn", alt: "サンプル画像"), root_path
+          = link_to image_tag("Download_on_the_App_Store_Badge_US-UK_blk_092917.png", class: "APPstore-btn", alt: "サンプル画像"), root_path
           = link_to image_tag("google-play-badge.png", class: "Googleplay-btn", alt: "サンプル画像"), root_path
     .index__main__topIntroduction
       .index__main__topIntroduction__subtitle
@@ -141,7 +142,7 @@
       .index__appBanner__inner__text
         今すぐ無料ダウンロード！
       .index__appBanner__inner__icon
-        = link_to image_tag("5a902db97f96951c82922874.png", class: "APPstore-btn", alt: "サンプル画像"), root_path
+        = link_to image_tag("Download_on_the_App_Store_Badge_US-UK_blk_092917.png", class: "APPstore-btn", alt: "サンプル画像"), root_path
         = link_to image_tag("google-play-badge.png", class: "Googleplay-btn", alt: "サンプル画像"), root_path
   .index__footer 
     .index__footer__contents

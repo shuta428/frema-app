@@ -4,14 +4,14 @@
   .index__header
     .index__header__inner
       .index__header__inner__main
-        .index__header__inner__main__icon
-          = form_with url: "#", local: true, method: :get do |f|
-            .form-group
-              =link_to "/" do
-                = image_tag "logo.png", alt: "Rails icon", id: "pic1", class: "FURIMA-btn"
-          = form_with scope: :search,  url: search_items_path, method: :get, local: true,class:"form__sach__new" do |form| 
-            = form.text_field :keyword, placeholder: "投稿を検索する", class: "form__sach" 
-            = form.submit "検索", class: "follow-btn" 
+        %h1.icon
+          =link_to "/" do
+            = image_tag src="logo.png", class: "FURIMA-btn"
+        .index__header__inner__main__search-box
+          %input{type: "text", class: "form__sach", placeholder: "キーワードから探す"}
+          %button{type: "submit", class: "follow-btn"} 
+            .index__header__inner__main__search-box__icon
+              = image_tag src="icon-search 1.png", class: "Search-btn"
       .index__header__inner__nav
         .index__header__inner__nav__listsLeft
           = link_to "#", class: "index__header__inner__nav__listsLeft__left-btn" do
@@ -114,7 +114,7 @@
       .index__main__pickupContainer__head
         ピックアップカテゴリー
       .index__main__pickupContainer__headbottom
-        新規新規投稿商品
+        新規投稿商品
       .index__main__pickupContainer__lists
         .index__main__pickupContainer__lists__list
           .index__main__pickupContainer__lists__list__link

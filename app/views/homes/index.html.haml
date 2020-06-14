@@ -1,6 +1,11 @@
 .index
-  .index__camera
-    = link_to image_tag("icon_camera.png", class: "camera-btn", alt: "サンプル画像"), root_path
+  = link_to "#" do
+    .index__camera
+      %span.index__camera__text
+        = "出品する"
+      = image_tag "/assets/icon_camera.png", alt: "サンプル画像", id: "pic1", class: "camera-btn"
+      
+    
   .index__header
     .index__header__inner
       .index__header__inner__main
@@ -13,17 +18,20 @@
             .index__header__inner__main__search-box__icon
               = image_tag src="icon-search 1.png", class: "Search-btn"
       .index__header__inner__nav
-        .index__header__inner__nav__listsLeft
-          = link_to "#", class: "index__header__inner__nav__listsLeft__left-btn" do
-            = "カテゴリ" 
-          = link_to "#", class: "index__header__inner__nav__listsLeft__left-btn" do
-            = "ブランド" 
-        .index__header__inner__nav__listsRight
-          = link_to "#", class: "index__header__inner__nav__listsRight__left-btn" do
-            = "ログイン" 
-          = link_to "#", class: "index__header__inner__nav__listsRight__left-btn" do
-            = "新規会員登録"
-          .index__header__inner__nav__listsRight__right-item
+        %ul.listsLeft
+          %li.item-category
+            = link_to "#", class: "index__header__inner__nav__listsLeft__left-btn" do
+              = "カテゴリー　　"
+          %li.item-bland 
+            = link_to "#", class: "index__header__inner__nav__listsLeft__left-btn" do
+              = "ブランド" 
+        %ul.listsRight
+          %li.item-login
+            = link_to "#", class: "index__header__inner__nav__listsRight__left-btn" do
+              = "ログイン"
+          %li.item-signup
+            = link_to "#", class: "index__header__inner__nav__listsRight__left-btn" do
+              = "新規会員登録"
   .index__main
     .index__main__visual
       .index__main__visual__content
@@ -91,50 +99,134 @@
       .index__main__topIntroduction__subtitle
         .index__main__topIntroduction__subtitle__bottom
         FURIMAの特徴
-    .index__main__items
-      .index__main__items__item
-        = image_tag "icon-01.png", alt: "Rails icon", id: "pic1", class: "item-image"
-        .index__main__items__item__subtitle
-          簡単に売り買いできる
-        .index__main__topIntroduction__subtitle__items__item__detail
-          スマホひとつで、いつでもどこでも簡単に出品・購入が可能！
-      .index__main__items__item
-        = image_tag "/assets/icon-03.png", alt: "Rails icon", id: "pic1", class: "item-image"
-        .index__main__items__item__subtitle
-          簡単に売り買いできる
-        .index__main__items__item__detail
-          スマホひとつで、いつでもどこでも簡単に出品・購入が可能！
-      .index__main__topIntroduction__subtitle__items__item
-        = image_tag "/assets/icon-04.png", alt: "Rails icon", id: "pic1", class: "item-image"
-        .index__main__items__item__subtitle
-          簡単に売り買いできる
-        .index__main__items__item__detail
-          スマホひとつで、いつでもどこでも簡単に出品・購入が可能！
+      .index__main__topIntroduction__items
+        .index__main__topIntroduction__items__item
+          %figure.item__image
+            = image_tag "icon-01.png", alt: "Rails icon", id: "pic1", class: "item-image"
+          .index__main__topIntroduction__items__item__subtitle
+            簡単に売り買いできる
+          .index__main__topIntroduction__items__item__detail
+            スマホひとつで、いつでもどこでも簡単に出品・購入が可能！
+        .index__main__topIntroduction__items__item
+          %figure.item__image
+            = image_tag "/assets/icon-03.png", alt: "Rails icon", id: "pic1", class: "item-image"
+          .index__main__topIntroduction__items__item__subtitle
+            簡単に売り買いできる
+          .index__main__itopIntroduction__items__item__detail
+            スマホひとつで、いつでもどこでも簡単に出品・購入が可能！
+        .index__main__topIntroduction__items__item
+          %figure.item__image
+            = image_tag "/assets/icon-04.png", alt: "Rails icon", id: "pic1", class: "item-image"
+          .index__main__topIntroduction__items__item__subtitle
+            簡単に売り買いできる
+          .index__main__topIntroduction__items__item__detail
+            スマホひとつで、いつでもどこでも簡単に出品・購入が可能！
     .index__main__pickupContainer
       .index__main__pickupContainer__head
         ピックアップカテゴリー
       .index__main__pickupContainer__headbottom
-        新規投稿商品
+        = link_to "/", class: "link-btn" do
+          新規投稿商品
       .index__main__pickupContainer__lists
         .index__main__pickupContainer__lists__list
           .index__main__pickupContainer__lists__list__link
-            四角
+            = link_to "/", class:"product-link" do
+              .product-image-box
+                = image_tag src="product3.png", class: "product-image"
+              .product-link__description
+                .product-name
+                  product3
+                .product-cost
+                  %ul{class: "product-cost__list"}
+                    %li
+                      30000円
+                    %li{class: "like-icon"}
+                      ★0
+                .product-tax
+                  (税込)
           .index__main__pickupContainer__lists__list__link
-            四角
+            = link_to "/", class:"product-link" do
+              .product-image-box
+                = image_tag src="product2.png", class: "product-image"
+              .product-link__description
+                .product-name
+                  product2
+                .product-cost
+                  %ul{class: "product-cost__list"}
+                    %li
+                      20000円
+                    %li{class: "like-btn"}
+                      ★0
+                .product-tax
+                  (税込)
           .index__main__pickupContainer__lists__list__link
-            四角
+            = link_to "/", class:"product-link" do
+              .product-image-box
+                = image_tag src="product1.png", class: "product-image"
+              .product-link__description
+                .product-name
+                  product1
+                .product-cost
+                  %ul{class: "product-cost__list"}
+                    %li
+                      10000円
+                    %li{class: "like-btn"}
+                      ★0
+                .product-tax
+                  (税込)
+    .index__main__pickupContainer
       .index__main__pickupContainer__head
         ピックアップブランド
       .index__main__pickupContainer__headbottom
-        アーカイバ
+        = link_to "/", class: "link-btn" do
+          アーカイバ
       .index__main__pickupContainer__lists
         .index__main__pickupContainer__lists__list
           .index__main__pickupContainer__lists__list__link
-            四角
+            = link_to "/", class:"product-link" do
+              .product-image-box
+                = image_tag src="product3.png", class: "product-image"
+            .product-link__description
+              .product-name
+                product3
+              .product-cost
+                %ul{class: "product-cost__list"}
+                  %li
+                    30000円
+                  %li{class: "like-icon"}
+                    ★0
+              .product-tax
+                (税込)
           .index__main__pickupContainer__lists__list__link
-            四角
+            = link_to "/", class:"product-link" do
+              .product-image-box
+                = image_tag src="product2.png", class: "product-image"
+              .product-link__description
+                .product-name
+                  product2
+                .product-cost
+                  %ul{class: "product-cost__list"}
+                    %li
+                      20000円
+                    %li{class: "like-btn"}
+                      ★0
+                .product-tax
+                  (税込)
           .index__main__pickupContainer__lists__list__link
-            四角
+            = link_to "/", class:"product-link" do
+              .product-image-box
+                = image_tag src="product1.png", class: "product-image"
+              .product-link__description
+                .product-name
+                  product1
+                .product-cost
+                  %ul{class: "product-cost__list"}
+                    %li
+                      10000円
+                    %li{class: "like-btn"}
+                      ★0
+                .product-tax
+                  (税込)
   .index__appBanner
     .index__appBanner__inner
       .index__appBanner__inner__title
